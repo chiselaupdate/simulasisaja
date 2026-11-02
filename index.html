@@ -98,9 +98,50 @@
 
         .sukses-icon { font-size: 80px; color: #2ecc71; margin-bottom: 10px; }
         
-        @media (min-width: 768px) {
-            .kandidat-grid { grid-template-columns: repeat(4, 1fr); }
-            .bg-blur-grid { grid-template-columns: repeat(4, 1fr); }
+                /* Memaksa 4 kolom di semua ukuran layar (termasuk HP) */
+        .kandidat-grid { 
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 8px; /* Jarak antar kandidat diperkecil agar muat di HP */
+            margin-top: 20px;
+        }
+        
+        .bg-blur-grid { 
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 8px;
+            width: 100%;
+        }
+
+        /* Menyesuaikan ukuran foto agar tidak terlalu lebar di HP */
+        .foto-container {
+            height: 110px; /* Tinggi diperkecil */
+        }
+        
+        .foto-kandidat, .siluet { 
+            width: 100%; 
+            max-width: 80px; /* Lebar maksimal foto di HP */
+            height: 110px; 
+        }
+
+        /* Menyesuaikan badge nomor urut di HP */
+        .nomor-urut {
+            width: 28px; 
+            height: 28px; 
+            font-size: 14px; 
+            top: -5px; 
+        }
+
+        /* Menyesuaikan teks nama kandidat di HP */
+        .nama-kandidat { 
+            font-size: 12px; 
+            min-height: 18px;
+        }
+
+        /* Menyesuaikan padding kotak kandidat agar lebih ringkas */
+        .kandidat-card {
+            padding: 8px;
+        }
         }
     </style>
 </head>
